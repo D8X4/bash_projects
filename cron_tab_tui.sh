@@ -65,7 +65,7 @@ whiptail --msgbox "Job Added:\n$schedule $command" 10 60
 # delete job function
 # delete a cronjob from crontab  
 delete_job() {
-  mapfile -t jobs < <(crontab -l 2>/dev/null | grep -v "^#" | grep -v "^$")
+  mapfile -t jobs < <(crontab -l 2>/dev/null | grep -v "^#[^~]" | grep -v "^$")
 
   if [ ${#jobs[@]} -eq 0 ]; then
     whiptail --title "Delete Job" --msgbox "No Cronjobs found" 10 40
