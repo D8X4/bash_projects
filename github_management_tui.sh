@@ -13,6 +13,7 @@ button=black,white
 compactbutton=white,black
 textbox=white,black
 '
+# fire this script INSIDE OF THE REPO DIRECTORY or itll give you this below
 # git check to see if it exist
 git rev-parse --git-dir > /dev/null 2>&1 || { whiptail --msgbox "Not a git repository." 10 40; exit 1; }
 
